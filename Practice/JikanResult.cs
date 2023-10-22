@@ -3,8 +3,8 @@
 #pragma warning disable CS8618 // 此類別不啟用 CS8618 警告
 public class Aired
 {
-    public DateTime from { get; set; }
-    public DateTime to { get; set; }
+    public DateTime? from { get; set; }
+    public DateTime? to { get; set; }
     public Prop prop { get; set; }
     public string @string { get; set; }
 }
@@ -133,9 +133,9 @@ public class Title
 
 public class To
 {
-    public int day { get; set; }
-    public int month { get; set; }
-    public int year { get; set; }
+    public int? day { get; set; }
+    public int? month { get; set; }
+    public int? year { get; set; }
 }
 
 public class Trailer

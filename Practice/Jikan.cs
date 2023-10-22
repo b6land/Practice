@@ -1,5 +1,4 @@
 using Newtonsoft.Json;
-using System.Net;
 
 public class Jikan{
 
@@ -14,6 +13,10 @@ public class Jikan{
     public Jikan(IHttpClient client, int animeId = 47917){
         _httpClient = client;
         _AnimeId = animeId; 
+
+        if(_AnimeId == 0){ // 指定預設值
+            _AnimeId = 47917;
+        }
     }
     
     /// <summary>
@@ -31,23 +34,6 @@ public class Jikan{
         }
 
         Console.WriteLine($"原始資料: {responseBody}");
-    }
-
-    /// <summary>
-    /// 以非同步方式下載 jikan.moe 網站的 getAnimeById API 內容
-    /// </summary>
-    /// <param name="url"> 網址 </param>
-    /// <returns> JSON 字串 </returns>
-    public async Task<string> GetResponseBody(string url){
-        using (HttpClient client = new HttpClient())
-        {
-            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-
-            using(HttpResponseMessage response = client.GetAsync(url).Result){
-                response.EnsureSuccessStatusCode();
-                return await response.Content.ReadAsStringAsync();
-            }
-        }
     }
 
     /// <summary>

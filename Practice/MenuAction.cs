@@ -8,7 +8,8 @@ public enum MenuOption{
     LambdaTest = 3,
     AsyncPractice = 4,
     RestCountries = 5,
-    Jikan = 6
+    Jikan = 6,
+    Instagram = 7
 }
 
 /// <summary>
@@ -41,6 +42,9 @@ public class MenuAction{
                 break;
             case MenuOption.Jikan:
                 CallJikan();
+                break;
+            case MenuOption.Instagram:
+                CallInstagram();
                 break;
             default:
                 break;
@@ -106,7 +110,19 @@ public class MenuAction{
     /// 從 jikan.moe 呼叫 API
     /// </summary>
     public void CallJikan(){
-        Jikan jiKan = new Jikan(new MyHttpClient());
+        Console.WriteLine("請輸入要查詢的動畫 ID: (不輸入時，預設為 47917 - 孤獨搖滾)");
+        string? input = Console.ReadLine();
+        int.TryParse(input, out int animeId);
+
+        Jikan jiKan = new Jikan(new MyHttpClient(), animeId);
         jiKan.Run();
+    }
+
+    /// <summary>
+    /// 從 Instagram 呼叫 API
+    /// </summary>
+    public void CallInstagram(){
+        Instagram ig = new Instagram();
+        ig.Run();
     }
 }
