@@ -31,8 +31,9 @@ public class UnitTest1
     public async Task 測試API_使用Mock()
     {
         string url = @$"https://api.jikan.moe/v4/anime/47917";
-        Jikan jikan = new Jikan(new MyHttpClientMock());
-        string json = await jikan.GetResponseBody(url);
+        MyHttpClientMock mock = new MyHttpClientMock();
+        Jikan jikan = new Jikan(mock);
+        string json = await mock.GetResponseBody(url);
         AnimeDTO? anime = jikan.GetAnimeInfo(json);
 
         Assert.AreEqual("Bocchi the Rock!", anime?.Title_English);
