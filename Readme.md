@@ -13,3 +13,4 @@
 5. 從 RestCountries 網站呼叫 API 取得國家資料，並建立單元測試 (測試時使用 Stub 隔離外部 API):[【Unit Test】Day 3 - 專注於邏輯，隔離與外部的關聯 - 程式隨筆](https://toyo0103.github.io/2017/04/19/【Unit-Test】Day-3-專注於邏輯，隔離與外部的關聯/)
 6. 從 Jikan (非官方 MyAnimeList 網站 API) 取得動畫資料，並建立單元測試 (測試時使用 Mock 隔離外部 API): [【Unit Test】Day 4 - Mock - 程式隨筆](https://toyo0103.github.io/2017/04/20/【Unit-Test】Day-4-Mock/)
 7. 從 Instagram 呼叫 API，取得使用者公開的資訊，以及最新一則公開貼文，並建立單元測試 (測試時以 `InternalsVisibleTo` 屬性取得被封裝的內部方法): [【Unit Test】Day 5 - 透過InternalsVisibleTo來達成單元測試的外部注入 - 程式隨筆](https://toyo0103.github.io/2017/04/21/【Unit-Test】Day-5-透過InternalsVisibleTo來達成單元測試的外部注入/)
+8. Template 設計模式練習: 參考「7天學會設計模式」內的範例，並稍作修改，以符合 C# 特性。

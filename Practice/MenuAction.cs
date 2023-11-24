@@ -9,7 +9,8 @@ public enum MenuOption{
     AsyncPractice = 4,
     RestCountries = 5,
     Jikan = 6,
-    Instagram = 7
+    Instagram = 7,
+    MazeTest = 8
 }
 
 /// <summary>
@@ -45,6 +46,9 @@ public class MenuAction{
                 break;
             case MenuOption.Instagram:
                 CallInstagram();
+                break;
+            case MenuOption.MazeTest:
+                CallMazeTest();
                 break;
             default:
                 break;
@@ -124,5 +128,13 @@ public class MenuAction{
     public void CallInstagram(){
         Instagram ig = new Instagram();
         ig.Run();
+    }
+
+    /// <summary>
+    /// 呼叫 MazeTemplate 的測試方法
+    /// </summary>
+    public void CallMazeTest(){
+        MazeTest mazeTest = new MazeTest();
+        mazeTest.Run();
     }
 }
