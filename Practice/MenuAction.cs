@@ -10,7 +10,13 @@ public enum MenuOption{
     RestCountries = 5,
     Jikan = 6,
     Instagram = 7,
-    MazeTest = 8
+    MazeTest = 8,
+    FactoryTest = 9,
+    NullConditionOperatorTest = 10,
+    SwitchCaseWhenTest = 11,
+    PersistenceLayerTest = 12,
+    PropertTest = 13,
+    RefitTest = 14
 }
 
 /// <summary>
@@ -49,6 +55,24 @@ public class MenuAction{
                 break;
             case MenuOption.MazeTest:
                 CallMazeTest();
+                break;
+            case MenuOption.FactoryTest:
+                CallFactoryTest();
+                break;
+            case MenuOption.NullConditionOperatorTest:
+                CallNullConditionOperatorTest();
+                break;
+            case MenuOption.SwitchCaseWhenTest:
+                CallSwitchCaseWhenTest();
+                break;
+            case MenuOption.PersistenceLayerTest:
+                CallPersistenceLayerTest();
+                break;
+            case MenuOption.PropertTest:
+                CallPropertyTest();
+                break;
+            case MenuOption.RefitTest:
+                CallRefitTest();
                 break;
             default:
                 break;
@@ -136,5 +160,53 @@ public class MenuAction{
     public void CallMazeTest(){
         MazeTest mazeTest = new MazeTest();
         mazeTest.Run();
+    }
+
+    /// <summary>
+    /// 呼叫 FactoryTest 的測試方法
+    /// </summary>
+    public void CallFactoryTest(){
+        FactoryTest factoryTest = new FactoryTest();
+        factoryTest.Run();
+    }
+
+    /// <summary>
+    /// 呼叫 NullConditionOperatorTest 類別的測試方法
+    /// </summary>
+    public void CallNullConditionOperatorTest(){
+        NullConditionOperatorTest nullTest = new NullConditionOperatorTest();
+        nullTest.Run();
+    }
+
+    /// <summary>
+    /// 呼叫 SwitchCaseWhenTest 類別的測試方法
+    /// </summary>
+    public void CallSwitchCaseWhenTest(){
+        SwitchCaseWhenTest switchCaseWhenTest = new SwitchCaseWhenTest();
+        switchCaseWhenTest.Run();
+    }
+
+    /// <summary>
+    /// 呼叫 PersistanceLayerTest 類別的測試方法，實作 Persistence Layer 的映射，並回傳至 Service Layer
+    /// </summary>
+    public void CallPersistenceLayerTest(){
+        PersistenceLayerTest persistenceLayerTest = new PersistenceLayerTest();
+        persistenceLayerTest.Run();
+    }
+
+    /// <summary>
+    /// 呼叫 PropertyTest 類別的測試方法
+    /// </summary>
+    public void CallPropertyTest(){
+        PropertTest propertTest = new PropertTest();
+        propertTest.Run();
+    }
+
+    /// <summary>
+    /// 呼叫 RefitAPI 類別的測試方法
+    /// </summary>
+    public void CallRefitTest(){
+        RefitAPI refitTest = new RefitAPI();
+        refitTest.Run();
     }
 }
